@@ -33,11 +33,11 @@ The following technologies and concepts were applied in this project, correspond
 5.  **IPC2 - Signals & Semaphores**:
     * **Semaphores**: POSIX semaphores (`sem_open()`, `sem_wait()`, `sem_post()`, `sem_close()`, `sem_unlink()`) are used to synchronize the operation of the 3rd and 4th clients. The fourth client waits until the third client finishes its work and releases the semaphore.
         * Semaphore name: `"/client_sync_sem"` (constant `SEM_NAME`).
-    * **Signals**: Signals (`SIGUSR1`) are used in client processes солнечwith timers to implement timeouts for user input.
+    * **Signals**: Signals (`SIGUSR1`) are used in client processes together with timers to implement timeouts for user input.
         * Functions: `sigaction()`, `sigemptyset()`, `volatile sig_atomic_t`.
 
 6.  **Timer**:
-    * Client processes use POSIX timers (`timer_create()`, `timer_settime()`) to limit the waiting time for user input (10 seconds). When the time expires, the `SIGUSR1` signal is triggered.
+    * Client processes use POSIX timers (`timer_create()`, `timer_settime()`) to limit the waiting time for user input (20 seconds). When the time expires, the `SIGUSR1` signal is triggered.
     * Uses `CLOCK_REALTIME`.
 
 7.  **Makefile**:
@@ -71,7 +71,7 @@ The following technologies and concepts were applied in this project, correspond
         * Connects to the server.
         * Updates its state in shared memory to `1` (active).
         * In a loop:
-            * Prompts the user for a number (with a 10-second timeout).
+            * Prompts the user for a number (with a 20-second timeout).
             * If timeout or input error, disconnects.
             * Sends the number to the server.
             * Receives and prints the response from the server.
