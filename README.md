@@ -122,13 +122,13 @@ The following technologies and concepts were applied in this project, correspond
     Example interaction with Client 3 (or 4):
     ```
     Client process 3 connected to the server.
-    Client 3: Enter a number (10 seconds to respond): 10
+    Client 3: Enter a number (20 seconds to respond): 10
     The number 10 is even.
     The number 10 is not divisible by 3.
     This is the first number sent by this client.
 
     Do you want to send another number? (y/n): y
-    Client 3: Enter a number (10 seconds to respond): 9
+    Client 3: Enter a number (20 seconds to respond): 9
     The number 9 is odd.
     The number 9 is divisible by 3.
     This is not the first number sent by this client.
