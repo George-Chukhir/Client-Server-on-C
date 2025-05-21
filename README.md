@@ -105,7 +105,7 @@ The following technologies and concepts were applied in this project, correspond
     ```bash
     ./server
     ```
-    Or use if you use just one terminal window ('&' will run file in the background) 
+    Or use "./server &" if you use just one terminal window ('&' will run file in the background) 
     ```bash
     ./server &
     ``` 
