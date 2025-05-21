@@ -101,11 +101,11 @@ void run_client(int client_id, shared_data_t *shared_data) {
 
     // start cycle for sending numbers
     do {
-        printf("Client %d: Enter a number (10 seconds to respond): ", client_id);
+        printf("Client %d: Enter a number (20 seconds to respond): ", client_id);
         fflush(stdout);
 
         timeout_occurred = 0;  // set flag of time-out on zero (vynulujeme)
-        start_timer(timer_id, 10);  // set timer on 10 seconds
+        start_timer(timer_id, 20);  // set timer on 20 seconds
 
         // trying to take number from client
         if (scanf("%d", &number) == EOF || timeout_occurred) {
@@ -131,7 +131,7 @@ void run_client(int client_id, shared_data_t *shared_data) {
         fflush(stdout); // "fflush" guarantees that our input in stdout will be immediately displayed
 
         timeout_occurred = 0;  //set flag of time-out on zero (vynulujeme) 
-       start_timer(timer_id, 10);  // set timer on 10 seconds
+       start_timer(timer_id, 20);  // set timer on 20 seconds
         if (scanf(" %c", &choice) == EOF || timeout_occurred) {
             printf("\nClient %d: Timeout occurred or no input provided. Disconnecting...\n", client_id);
             break;
